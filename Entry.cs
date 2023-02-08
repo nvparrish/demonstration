@@ -18,9 +18,9 @@ class Entry
         Console.WriteLine($"Date: {_date} - Prompt: {_prompt}\n{_response}");
     }
 
-    public string Serialize(int foo)
+    public string Serialize()
     {
-        return "";
+        return $"{_date}~|~{_prompt}~|~{_response}";
     }
 
     public void Deserialize(string line)
