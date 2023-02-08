@@ -6,6 +6,20 @@ class Entry
     private string _prompt;
     private string _response;
 
+    public Entry()
+    {
+        _date = DateTime.Now.ToShortDateString();
+        // _prompt = PromptGenerator.GetPrompt(); // TODO: Add line when this is written
+        _prompt = "What is your favorite program to write?";
+        Console.WriteLine(_prompt);
+        _response = Console.ReadLine();
+    }
+
+    public Entry(string line)
+    {
+        Deserialize(line);
+    }
+
     public Entry(string date, string prompt, string response)
     {
         _date = date;
