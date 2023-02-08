@@ -25,6 +25,16 @@ class Entry
 
     public void Deserialize(string line)
     {
-
+        string[] parts = line.Split("~|~");
+        if (parts.Length < 3) 
+        {
+            Console.WriteLine("Badly formed line.");
+        }
+        else
+        {
+            _date = parts[0];
+            _prompt = parts[1];
+            _response = parts[2];
+        }
     }
 }
